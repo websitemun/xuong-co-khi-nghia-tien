@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gia Công Cơ Khí Tại Cam Ranh, Khánh Hòa | Xưởng CNC Nghĩa Tiến</title>
     <meta name="description" content="Xưởng gia công cơ khí chính xác tại Cam Ranh, Khánh Hòa. Nhận cắt Laser CNC, chấn gấp kim loại, cán tôn lợp và phân phối sắt thép cho khu vực Cam Ranh, Cam Lâm, Nha Trang.">
     
@@ -28,6 +29,20 @@
         .btn-shine { position: relative; overflow: hidden; }
         .btn-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: 0.5s; }
         .btn-shine:hover::after { left: 100%; }
+        
+        /* FLOATING BUTTONS CSS RESTORED */
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            10%, 30%, 50%, 70%, 90% { transform: rotate(-10deg); }
+            20%, 40%, 60%, 80% { transform: rotate(10deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .floating-contact { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+        .contact-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; font-weight: bold; font-size: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); animation: shake 2s infinite ease-in-out; }
+        .contact-btn:hover { animation-play-state: paused; }
+        .btn-zalo { background-color: #0068ff; } 
+        .btn-phone { background-color: #0fb900; }
+        
         html { scroll-behavior: smooth; }
         body { overflow-x: hidden; }
     </style>
@@ -39,16 +54,30 @@
             <div class="text-2xl font-black text-brand-blue uppercase leading-tight tracking-tighter">
                 CƠ KHÍ <span class="text-brand-red">NGHĨA TIẾN</span>
             </div>
+            
             <nav class="hidden md:flex space-x-8 font-semibold text-gray-700">
                 <a href="#ve-chung-toi" class="hover:text-brand-blue transition">Giới thiệu</a>
-                <a href="#nang-luc" class="hover:text-brand-blue transition">Dịch vụ</a>
+                <a href="#nang-luc" class="hover:text-brand-blue transition">Dịch vụ & Năng lực</a>
                 <a href="#vat-tu" class="hover:text-brand-blue transition">Kho Vật Tư</a>
-                <a href="#san-pham" class="hover:text-brand-blue transition">Sản Phẩm</a>
+                <a href="#san-pham" class="hover:text-brand-blue transition">Dự án</a>
                 <a href="#lien-he" class="hover:text-brand-blue transition">Liên Hệ</a>
             </nav>
+            
             <a href="tel:0978864792" class="hidden md:flex items-center gap-2 bg-brand-red text-white px-6 py-2 rounded font-bold shadow-lg hover:bg-red-700 transition">
                 <i class="fas fa-phone-alt animate-pulse"></i> 0978 864 792
             </a>
+
+            <button onclick="toggleMobileMenu()" class="md:hidden text-2xl text-brand-blue focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <a href="#ve-chung-toi" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-md">Giới thiệu</a>
+            <a href="#nang-luc" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-md">Dịch vụ & Năng lực</a>
+            <a href="#vat-tu" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-md">Kho Vật Tư</a>
+            <a href="#san-pham" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-md">Sản Phẩm</a>
+            <a href="#lien-he" onclick="toggleMobileMenu()" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-brand-blue hover:bg-gray-50 rounded-md">Liên Hệ</a>
         </div>
     </header>
 
@@ -56,24 +85,20 @@
         <video autoplay muted loop playsinline class="absolute inset-0 z-0 w-full h-full object-cover opacity-50">
             <source src="xuong-co-khi-nghia-tien-cam-ranh.mp4" type="video/mp4">
         </video>
-        
         <div class="container mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-brand-yellow font-bold text-lg mb-4 tracking-wider uppercase inline-block border-b-2 border-brand-yellow pb-1" data-aos="fade-down">Xưởng Cơ Khí Hàng Đầu Cam Ranh</h2>
-            
+            <h2 class="text-brand-yellow font-bold text-lg mb-4 tracking-wider uppercase inline-block border-b-2 border-brand-yellow pb-1" data-aos="fade-down">Xưởng Cơ Khí Chính Xác Cam Ranh</h2>
             <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight uppercase" data-aos="zoom-in" data-aos-delay="100">
                 GIA CÔNG CNC & <br> PHÂN PHỐI SẮT THÉP KHÁNH HÒA
             </h1>
-            
             <p class="text-lg text-gray-200 mb-10 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                Chuyên gia công cắt Fiber Laser, Phay Tiện, Chấn gấp CNC và cung cấp sỉ lẻ Tôn lợp, Xà gồ trực tiếp cho các công trình tại Cam Ranh, Cam Lâm và lân cận.
+                Nhận gia công chi tiết máy, cắt Fiber Laser Inox/Thép, chấn gấp CNC, và cung cấp vật tư kim khí tiêu chuẩn SS400, SUS304 cho dự án công nghiệp.
             </p>
-            
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="300">
                 <a href="tel:0965641036" class="bg-brand-yellow text-brand-dark px-10 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition hover:scale-105 transform shadow-lg btn-shine">
-                    Tư Vấn Báo Giá Ngay
+                    Tư Vấn Báo Giá Kỹ Thuật
                 </a>
                 <a href="#nang-luc" class="border-2 border-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-brand-blue transition">
-                    Xem Năng Lực Xưởng
+                    Xem Bảng Năng Lực
                 </a>
             </div>
         </div>
@@ -83,14 +108,14 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <h2 class="text-brand-blue font-bold tracking-widest uppercase mb-2">Về Cơ Khí Nghĩa Tiến</h2>
-                    <h3 class="text-3xl md:text-4xl font-black text-brand-dark mb-6 leading-snug">ĐỐI TÁC CUNG ỨNG VẬT TƯ & GIA CÔNG UY TÍN TẠI KHÁNH HÒA</h3>
-                    <p class="text-gray-600 mb-4 text-lg">Tọa lạc tại TDP Nghĩa Quý, Phường Bắc Cam Ranh, Cơ Khí Nghĩa Tiến là tổng kho vật tư kim khí và xưởng gia công chế tạo chiến lược, đáp ứng nhanh chóng vật tư cho khu vực phía Nam Khánh Hòa.</p>
-                    <p class="text-gray-600 mb-6 text-lg">Lợi thế của chúng tôi là <strong>kho bãi rộng, bám sát địa bàn thi công</strong>: Khách hàng tại Cam Ranh, Cam Lâm không cần chịu chi phí vận chuyển cao từ các tỉnh xa. Chúng tôi cung cấp phôi thép và gia công thành phẩm ngay tại địa phương.</p>
+                    <h2 class="text-brand-blue font-bold tracking-widest uppercase mb-2">Hồ Sơ Năng Lực</h2>
+                    <h3 class="text-3xl md:text-4xl font-black text-brand-dark mb-6 leading-snug">ĐỐI TÁC GIA CÔNG CƠ KHÍ TOÀN DIỆN TẠI KHÁNH HÒA</h3>
+                    <p class="text-gray-600 mb-4 text-lg">Với hệ thống nhà xưởng quy mô tại TDP Nghĩa Quý, Bắc Cam Ranh, Cơ Khí Nghĩa Tiến chuyên nhận thầu gia công cấu kiện thép, chi tiết máy và vật tư kim loại tấm cho các dự án xây dựng, đóng tàu và công nghiệp chế tạo.</p>
+                    <p class="text-gray-600 mb-6 text-lg">Khả năng đáp ứng dung sai khắt khe, tuân thủ bản vẽ kỹ thuật CAD/CAM và kiểm định chất lượng đường hàn là những yếu tố giúp chúng tôi giữ vững uy tín với các nhà thầu lớn.</p>
                     <ul class="space-y-3 font-semibold text-brand-dark">
-                        <li><i class="fas fa-check-circle text-brand-yellow mr-2"></i> Giao hàng tận chân công trình tại Cam Ranh & Cam Lâm.</li>
-                        <li><i class="fas fa-check-circle text-brand-yellow mr-2"></i> Hệ thống máy cắt chấn CNC hiện đại, không qua trung gian.</li>
-                        <li><i class="fas fa-check-circle text-brand-yellow mr-2"></i> Cam kết tiến độ khắt khe cho nhà thầu xây dựng.</li>
+                        <li><i class="fas fa-cog text-brand-yellow mr-2"></i> Công nghệ: CNC Fiber Laser, Phay/Tiện CNC, Chấn thủy lực.</li>
+                        <li><i class="fas fa-layer-group text-brand-yellow mr-2"></i> Khả năng xử lý: Thép cacbon, thép hợp kim, Inox, Nhôm, Đồng.</li>
+                        <li><i class="fas fa-hard-hat text-brand-yellow mr-2"></i> Thi công: Lắp dựng kết cấu thép nhà xưởng tận nơi.</li>
                     </ul>
                 </div>
                 <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
@@ -104,31 +129,49 @@
     <section id="nang-luc" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-brand-red font-bold tracking-widest uppercase mb-2">Dịch Vụ Trọng Tâm</h2>
-                <h3 class="text-4xl font-black text-brand-dark">GIA CÔNG CƠ KHÍ CHÍNH XÁC CAM RANH</h3>
+                <h2 class="text-brand-red font-bold tracking-widest uppercase mb-2">Bảng Dịch Vụ & Thông Số Kỹ Thuật</h2>
+                <h3 class="text-4xl font-black text-brand-dark">CHI TIẾT NĂNG LỰC GIA CÔNG</h3>
                 <div class="w-24 h-1 bg-brand-blue mx-auto mt-4"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-brand-gray rounded-xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="0">
-                    <img src="gia-cong-cat-laser-cnc-khanh-hoa.jpg" alt="Cắt Laser CNC tại Cam Ranh" class="w-full h-60 object-cover">
-                    <div class="p-8">
-                        <h4 class="text-xl font-black text-brand-blue mb-4">Cắt Laser & Phay Tiện CNC</h4>
-                        <p class="text-gray-600 mb-4">Nhận cắt CNC Inox, Sắt tấm theo bản vẽ. Đục lỗ, làm vách ngăn, cửa cổng mỹ thuật cho các dự án biệt thự, nhà phố tại địa phương.</p>
+                    <img src="gia-cong-cat-laser-cnc-khanh-hoa.jpg" alt="Cắt Laser CNC Inox Thép" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-black text-brand-blue mb-3">Gia Công Kim Loại Tấm (CNC)</h4>
+                        <p class="text-gray-600 mb-3 text-sm font-medium">Sử dụng nguồn Laser công suất cao, đảm bảo không bavia, mạch cắt hẹp, dung sai ±0.1mm.</p>
+                        <ul class="text-gray-700 text-sm space-y-2 border-t pt-3 border-gray-300">
+                            <li><i class="fas fa-caret-right text-brand-red mr-2"></i> <strong>Cắt Inox (SUS 304, 316):</strong> Độ dày đến 10mm.</li>
+                            <li><i class="fas fa-caret-right text-brand-red mr-2"></i> <strong>Cắt Thép Đen (SS400):</strong> Độ dày đến 20mm.</li>
+                            <li><i class="fas fa-caret-right text-brand-red mr-2"></i> <strong>Chấn gấp CNC:</strong> Máy chấn thủy lực lực ép lớn, độ dài chấn 3m - 4m.</li>
+                            <li><i class="fas fa-caret-right text-brand-red mr-2"></i> <strong>Sản phẩm:</strong> Bản mã, bích thép, vỏ máy, vách ngăn trang trí, lưới lọc.</li>
+                        </ul>
                     </div>
                 </div>
+
                 <div class="bg-brand-gray rounded-xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="100">
-                    <img src="may-can-ton-lop-cong-nghiep.jpg" alt="Máy cán tôn tại Cam Ranh" class="w-full h-60 object-cover">
-                    <div class="p-8">
-                        <h4 class="text-xl font-black text-brand-blue mb-4">Nhà Máy Cán Tôn Lợp</h4>
-                        <p class="text-gray-600 mb-4">Sản xuất trực tiếp tôn màu, tôn lạnh, xà gồ C-Z phục vụ các xưởng công nghiệp và nhà dân dụng quanh khu vực Bắc Cam Ranh.</p>
+                    <img src="gia-cong-ket-cau-thep-nha-xuong.jpg" alt="Phay tiện, hàn kết cấu thép" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-black text-brand-blue mb-3">Phay Tiện & Kết Cấu Thép</h4>
+                        <p class="text-gray-600 mb-3 text-sm font-medium">Chế tạo phôi, chi tiết máy, tổ hợp kết cấu hàn theo tiêu chuẩn xây dựng công nghiệp.</p>
+                        <ul class="text-gray-700 text-sm space-y-2 border-t pt-3 border-gray-300">
+                            <li><i class="fas fa-caret-right text-brand-red mr-2"></i> <strong>Phay/Tiện chính xác:</strong> Trục động cơ, bánh răng, ty ren, khớp nối.</li>
+                            <li><i class="fas fa-caret-right text-brand-red mr-2"></i> <strong>Hàn công nghiệp:</strong> MIG/MAG/TIG, hàn siêu âm áp lực, que hàn chịu lực.</li>
+                            <li><i class="fas fa-caret-right text-brand-red mr-2"></i> <strong>Kết cấu thép:</strong> Khung Zamil, cột nhà xưởng, dầm cầu trục, bồn bể chứa công nghiệp.</li>
+                        </ul>
                     </div>
                 </div>
+
                 <div class="bg-brand-gray rounded-xl overflow-hidden hover-lift" data-aos="fade-up" data-aos-delay="200">
-                    <img src="gia-cong-ket-cau-thep-nha-xuong.jpg" alt="Hàn kết cấu thép Khánh Hòa" class="w-full h-60 object-cover">
-                    <div class="p-8">
-                        <h4 class="text-xl font-black text-brand-blue mb-4">Gia Công Kết Cấu Thép</h4>
-                        <p class="text-gray-600 mb-4">Chấn gấp U, V, I và tổ hợp hàn kết cấu khung kèo thép tiền chế. Hỗ trợ vận chuyển cẩu tải nhẹ đến tận công trình.</p>
+                    <img src="may-can-ton-lop-cong-nghiep.jpg" alt="Máy cán tôn xà gồ" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-black text-brand-blue mb-3">Sản Xuất Tôn Lợp & Xà Gồ</h4>
+                        <p class="text-gray-600 mb-3 text-sm font-medium">Hệ thống máy cán tốc độ cao, cắt quy cách theo đúng chiều dài yêu cầu của bản vẽ.</p>
+                        <ul class="text-gray-700 text-sm space-y-2 border-t pt-3 border-gray-300">
+                            <li><i class="fas fa-caret-right text-brand-red mr-2"></i> <strong>Biên dạng tôn:</strong> Tôn 5 sóng, 9 sóng, 11 sóng, tôn giả ngói.</li>
+                            <li><i class="fas fa-caret-right text-brand-red mr-2"></i> <strong>Chất liệu:</strong> Tôn kẽm, tôn lạnh mạ màu (Hoa Sen, Đông Á).</li>
+                            <li><i class="fas fa-caret-right text-brand-red mr-2"></i> <strong>Cán Xà Gồ C/Z:</strong> Đột lỗ sẵn trên máy, độ dày từ 1.5ly - 3.0ly.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -139,42 +182,57 @@
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="grid grid-cols-2 gap-4" data-aos="fade-right">
-                    <img src="kho-thep-hop-thep-ong-cam-ranh.jpg" alt="Đại lý sắt thép Cam Ranh" class="rounded-lg object-cover h-64 w-full shadow-lg">
-                    <img src="thep-tam-nguyen-lieu-gia-cong.jpg" alt="Kho thép tấm Khánh Hòa" class="rounded-lg object-cover h-64 w-full shadow-lg mt-8">
+                    <img src="kho-thep-hop-thep-ong-cam-ranh.jpg" alt="Kho thép xây dựng" class="rounded-lg object-cover h-full w-full shadow-lg">
+                    <div class="flex flex-col gap-4">
+                        <img src="thep-tam-nguyen-lieu-gia-cong.jpg" alt="Thép tấm nguyên liệu" class="rounded-lg object-cover h-48 w-full shadow-lg">
+                        <div class="bg-brand-blue p-4 rounded-lg text-center flex-grow flex flex-col justify-center">
+                            <h4 class="font-black text-2xl text-brand-yellow">100+</h4>
+                            <p class="text-sm font-bold mt-1">Mã Quy Cách Vật Tư Sẵn Sàng Giao Nhận</p>
+                        </div>
+                    </div>
                 </div>
+                
                 <div data-aos="fade-left">
-                    <h2 class="text-brand-yellow font-bold tracking-widest uppercase mb-2">Đại Lý Phân Phối</h2>
-                    <h3 class="text-4xl font-black mb-6">TỔNG KHO SẮT THÉP XÂY DỰNG CAM RANH</h3>
-                    <p class="text-gray-300 mb-8 text-lg">Giảm thiểu chi phí logistic cho chủ thầu. Nghĩa Tiến cung cấp giá sỉ buôn các mặt hàng kim khí, xuất kho nhanh chóng cho các dự án tại Nam Khánh Hòa.</p>
+                    <h2 class="text-brand-yellow font-bold tracking-widest uppercase mb-2">Bảng Mã Vật Tư Kim Khí</h2>
+                    <h3 class="text-3xl md:text-4xl font-black mb-6">TỔNG KHO PHÂN PHỐI SẮT THÉP & INOX</h3>
+                    <p class="text-gray-300 mb-8 text-base">Giải pháp vật tư toàn diện, cung cấp chứng chỉ CO/CQ rõ ràng. Phục vụ bán lẻ và đổ buôn trực tiếp cho nhà thầu thi công tại Cam Ranh, Cam Lâm, Ninh Thuận.</p>
                     
-                    <div class="grid grid-cols-2 gap-y-6 gap-x-4">
-                        <div class="flex items-start">
-                            <i class="fas fa-cubes text-3xl text-brand-red mr-4"></i>
-                            <div>
-                                <h5 class="font-bold text-lg">Thép Tấm & Cuộn</h5>
-                                <p class="text-sm text-gray-400">Thép đen, thép mạ kẽm chính hãng.</p>
-                            </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-800 p-4 rounded border-l-4 border-brand-red">
+                            <h5 class="font-bold text-lg mb-2 text-brand-yellow"><i class="fas fa-cubes mr-2"></i>Thép Tấm & Cuộn</h5>
+                            <p class="text-sm text-gray-300 leading-relaxed">
+                                - Thép tấm SS400, A36, Q345.<br>
+                                - Thép tấm gân chống trượt.<br>
+                                - Thép cuộn cán nóng / cán nguội.<br>
+                                - Độ dày từ 1mm đến 50mm.
+                            </p>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-box text-3xl text-brand-red mr-4"></i>
-                            <div>
-                                <h5 class="font-bold text-lg">Sắt Thép Hình U, I, V</h5>
-                                <p class="text-sm text-gray-400">Khung gầm, dầm móng nhà xưởng.</p>
-                            </div>
+                        <div class="bg-gray-800 p-4 rounded border-l-4 border-brand-red">
+                            <h5 class="font-bold text-lg mb-2 text-brand-yellow"><i class="fas fa-box mr-2"></i>Sắt Thép Định Hình</h5>
+                            <p class="text-sm text-gray-300 leading-relaxed">
+                                - Thép đúc U, I, V, H tiêu chuẩn JIS.<br>
+                                - Thép ống tròn đen / mạ kẽm (Hòa Phát).<br>
+                                - Thép hộp vuông, hộp chữ nhật.<br>
+                                - Cắt theo quy cách chiều dài bản vẽ.
+                            </p>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-stream text-3xl text-brand-red mr-4"></i>
-                            <div>
-                                <h5 class="font-bold text-lg">Thép Hộp & Ống</h5>
-                                <p class="text-sm text-gray-400">Đầy đủ quy cách, độ dày ly.</p>
-                            </div>
+                        <div class="bg-gray-800 p-4 rounded border-l-4 border-brand-red">
+                            <h5 class="font-bold text-lg mb-2 text-brand-yellow"><i class="fas fa-medal mr-2"></i>Vật Tư Inox (Thép Không Gỉ)</h5>
+                            <p class="text-sm text-gray-300 leading-relaxed">
+                                - Mác Inox: SUS 304, SUS 201, SUS 316.<br>
+                                - Định hình: Dạng tấm, cuộn, ống, hộp tròn/vuông.<br>
+                                - Bề mặt: Bóng gương BA, xước Hairline, 2B.<br>
+                                - Phụ kiện Inox: Co, tê, bích, van.
+                            </p>
                         </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-medal text-3xl text-brand-red mr-4"></i>
-                            <div>
-                                <h5 class="font-bold text-lg">Vật Tư Inox 304</h5>
-                                <p class="text-sm text-gray-400">Vật tư gia công chống ăn mòn biển.</p>
-                            </div>
+                        <div class="bg-gray-800 p-4 rounded border-l-4 border-brand-red">
+                            <h5 class="font-bold text-lg mb-2 text-brand-yellow"><i class="fas fa-home mr-2"></i>Vật Tư Mái Lợp & Phụ Kiện</h5>
+                            <p class="text-sm text-gray-300 leading-relaxed">
+                                - Tôn lạnh, tôn kẽm mạ màu.<br>
+                                - Tôn xốp cách nhiệt PU, EPS.<br>
+                                - Xà gồ mạ kẽm Z và C.<br>
+                                - Vít bắn tôn, ke chống bão, máng xối.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -185,27 +243,27 @@
     <section id="san-pham" class="py-20 bg-brand-gray">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-brand-blue font-bold tracking-widest uppercase mb-2">Sản Phẩm Hoàn Thiện</h2>
-                <h3 class="text-4xl font-black text-brand-dark">CÁC DỰ ÁN TRANG TRÍ CNC NỔI BẬT</h3>
-                <p class="text-gray-600 mt-4">Trực tiếp thiết kế và cắt Laser giao khách hàng tại địa phương.</p>
+                <h2 class="text-brand-blue font-bold tracking-widest uppercase mb-2">Thực Tế Chế Tạo</h2>
+                <h3 class="text-4xl font-black text-brand-dark">CÁC DỰ ÁN TRANG TRÍ & DÂN DỤNG</h3>
+                <p class="text-gray-600 mt-4 max-w-3xl mx-auto">Ngoài gia công công nghiệp, Cơ Khí Nghĩa Tiến trực tiếp thiết kế, thi công các sản phẩm nội ngoại thất kim loại (cửa cổng, vách ngăn, bàn ghế) ứng dụng công nghệ cắt CNC hoa văn tinh xảo.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="bg-white p-4 rounded-lg shadow-md group" data-aos="zoom-in" data-aos-delay="0">
                     <div class="overflow-hidden rounded h-64 mb-4">
-                        <img src="ban-ghe-sat-cnc-nghe-thuat.jpg" alt="Bàn thép CNC Cam Ranh" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <img src="ban-ghe-sat-cnc-nghe-thuat.jpg" alt="Bàn thép CNC" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
                     <h4 class="font-bold text-lg text-center text-brand-dark">Bàn Ghế Sắt Hoa Văn CNC</h4>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-md group" data-aos="zoom-in" data-aos-delay="100">
                     <div class="overflow-hidden rounded h-64 mb-4">
-                        <img src="tru-kim-loai-trang-tri-cnc.jpg" alt="Trụ trang trí nội thất" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <img src="tru-kim-loai-trang-tri-cnc.jpg" alt="Trụ trang trí" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
-                    <h4 class="font-bold text-lg text-center text-brand-dark">Trụ Kim Loại Cắt Nghệ Thuật</h4>
+                    <h4 class="font-bold text-lg text-center text-brand-dark">Trụ Kim Loại Cắt Laser Nghệ Thuật</h4>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-md group" data-aos="zoom-in" data-aos-delay="200">
                     <div class="overflow-hidden rounded h-64 mb-4">
-                        <img src="hoa-van-trong-dong-cat-laser.jpg" alt="Cắt CNC trống đồng Khánh Hòa" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <img src="hoa-van-trong-dong-cat-laser.jpg" alt="Vách ngăn CNC" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
                     </div>
                     <h4 class="font-bold text-lg text-center text-brand-dark">Mặt Trống Đồng / Vách Ngăn</h4>
                 </div>
@@ -228,8 +286,8 @@
                         <span class="text-white font-bold text-2xl">0978 864 792 - 0965 641 036</span>
                     </li>
                     <li class="flex items-center gap-4 mt-4 text-sm text-gray-500">
-                        <i class="fas fa-truck text-brand-blue"></i>
-                        <span>Khu vực giao hàng & thi công: TP. Cam Ranh, H. Cam Lâm, TP. Nha Trang.</span>
+                        <i class="fas fa-envelope text-brand-blue"></i>
+                        <span>Yêu cầu báo giá kỹ thuật qua Zalo hoặc Gọi điện trực tiếp.</span>
                     </li>
                 </ul>
             </div>
@@ -239,13 +297,25 @@
             </div>
         </div>
         <div class="text-center pt-8 border-t border-gray-800 text-sm">
-            <p>© 2026 Công Ty TNHH Cơ Khí Nghĩa Tiến. Xưởng Gia Công Cơ Khí Cam Ranh.</p>
+            <p>© 2026 Công Ty TNHH Cơ Khí Nghĩa Tiến. Hệ thống website chuẩn kỹ thuật công nghiệp.</p>
         </div>
     </footer>
 
+    <div class="floating-contact">
+        <a href="https://zalo.me/0978864792" class="contact-btn btn-zalo" target="_blank" rel="noopener">ZALO</a>
+        <a href="tel:0978864792" class="contact-btn btn-phone">GỌI</a>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Init Scroll Animation
         AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+        
+        // Mobile Menu Toggle Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
     </script>
 </body>
 </html>
